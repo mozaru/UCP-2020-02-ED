@@ -9,8 +9,8 @@ operações basicas:
 - **cheia**  -> retorna verdadeiro se a fila ja esta na sua capacidade maxima de ocupação e falso caso contrário
 - **primeiro** -> retorna o valor do elemento mais antigo na fila, ou seja, o valor do elemento no inicio da fila
 - **ultimo** -> retorna o valor do elemento mais recente na fila, ou seja, o valor do elemento no final da fila
--**inserir** -> insere um novo elemento ao final da fila
--**remover** -> remove o elemento mais antigo na fila, ou seja, o elemento no inicio da fila
+- **inserir** -> insere um novo elemento ao final da fila
+- **remover** -> remove o elemento mais antigo na fila, ou seja, o elemento no inicio da fila
 
 Implementação de uma fila de reais em C
 
