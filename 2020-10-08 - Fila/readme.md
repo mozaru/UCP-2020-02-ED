@@ -28,7 +28,7 @@ typedef struct
   int iInicio,iFim;       
 } TFila; 
 
-#define prox(x) = ((x+1)%_MAX_)
+#define prox(x) ((x+1)%_MAX_)
 
 void inicializar(TFila *f)
 {
@@ -47,7 +47,7 @@ int vazia(TFila f)
    return f.iFim==-1;
 }
 
-int cheia(TFile f)
+int cheia(TFila f)
 {
    return f.iFim!=-1 && prox(f.iFim) == f.iInicio;
 }
@@ -89,7 +89,7 @@ void inserir(TFila *f, TInfo info)
   }
 } 
 
-void remover(Tfila *f)
+void remover(TFila *f)
 {
   if (vazia(*f))
   {
@@ -122,10 +122,11 @@ int main(void)
    }
           
 
-   finalizar(*f);
+   finalizar(&f);
   
    return 0;
 }
+
 
 ~~~
 
