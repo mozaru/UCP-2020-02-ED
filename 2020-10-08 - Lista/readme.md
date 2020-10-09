@@ -23,7 +23,7 @@
 
 
 implementação em C
-
+~~~c
 #include<stdio.h>
 #include<stdlib.h>
 #include<errno.h>
@@ -294,4 +294,5 @@ int main(void)
   finalizar(&l);
   return 0;
 }
+~~~
 
