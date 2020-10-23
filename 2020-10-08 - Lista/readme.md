@@ -79,20 +79,20 @@ TInfo obterElemento(TLista l, int pos)
      return l.v[pos];
 }
 
-TInfo atribuirElemento(TLista l, int pos, TInfo info)
+TInfo atribuirElemento(TLista *l, int pos, TInfo info)
 {
-   if (vazia(l))
+   if (vazia(*l))
    {
       perror("Lista vazia quando tentava atribuir o valor de um elemento\n");
       exit(3);
    }
-   else if(pos<0 || pos>=l.qtd)
+   else if(pos<0 || pos>=(*l).qtd)
    {
       perror("Indice fora faixa quando tentava atribuir o valor de um elemento\n");
       exit(4);
    }  
    else 
-     l.v[pos] = info;
+     (*l).v[pos] = info;
 }
 
 int obterIndice(TLista l, TInfo info)
