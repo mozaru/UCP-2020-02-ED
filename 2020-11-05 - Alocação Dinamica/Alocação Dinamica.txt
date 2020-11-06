@@ -1,0 +1,83 @@
+** Ponteiros e Alocação Dinamica
+  
+** Ponteiro
+ uma variavel que contem um endereço de memoria.
+ os ponteiros podem ser tipados, isso quer dizer a posicao de memoria apontado pelo ponteiro, contem um valor daquele tipo
+
+ declaração em c 
+   sintaxe: tipo *nome_ponteiro;
+
+   ex:
+   void *p;
+   int *v; 
+   float *x;
+   TNo *novo;
+
+   obs: toda variavel tem o seu conteudo em algum lugar da memoria, para obter esse lugar, chamado de endereco, usamos
+   operador &.
+   ex:
+     int x=10; 
+
+     printf("x = %i\nEndereco=%p", x, &x);    
+
+   obs: para pegar o conteudo da memoria apontada por um ponteiro usaro o operador *
+   ex: 
+     int x=10, *p; 
+     p=&x;
+     printf("x = %i\nEndereco=%p", x, &x);    
+     printf("memoria[%p] = %i\n", p, *p );    
+
+ Aritmetica de Ponteiros
+    podemos somar, subtrair, incrementar e decrementar
+
+    ex:  int *x;     //como x aponta para um inteiro, sabendo-se que numa maquina 64 bits, int gasta 8 bytes.
+     
+         suponha que x aponta para o endereco: 1000
+         temos: x + 1 -> 1008
+                x - 1 -> 0992
+                x++   -> x vai para 1008
+                x--   -> x vai para 0992    
+
+                x + 10-> 1080                  
+    
+
+    *(x+10)=50   ->  MEM[1080] = 50     
+    x[10]=50     ->  MEM[1080] = 50
+ desta forma pode-se observar que ponteiro é muito proximo de vetor, 
+       a diferenca é que vetor é ponteiro alocado estaticamente, logo é um constante que nao pode ser alterada
+ 
+
+ Alocação
+   solicitar ao SO para reservar uma área continua de memoria.
+   ao deixar de usar essa área de memória, a aplicação eh reponsável por avisar ao so que nao vai mais usar a memoria
+   previamente reservada. Caso isso nao seja feito teremos o memory_leak, que um memoria reservada e nao liberada.
+
+ 
+  Em temos os seguintes comandos:
+    malloc : usado para alocar memoria, retorna  o endereço inicial do bloco alocado, ou NULL se nao for possivel.
+     sintaxe: malloc(qtd_bytes)
+              (tipo *)malloc(qtd * sizeof(tipo))
+    free   : usado para liberar memoria.
+              free(ponteiro para inicio da memoria)
+
+    ex:
+        int *vet, i, qtd;
+
+        printf("entre com a quantidade de numeros:");
+        scanf("%i", &qtd);
+
+        vet = (int *)malloc(sizeof(int) * qtd);
+       
+        for(i=0; i< qtd; i++)
+        {
+            printf("V[%i]=",i);
+            scanf("%i", &vet[i]);
+        }           
+  
+      	for(i=qtd-1; i>= 0; i--)
+            printf("V[%i]=%i\n",i, vet[i]);
+    
+        free(vet);
+      
+ 
+
