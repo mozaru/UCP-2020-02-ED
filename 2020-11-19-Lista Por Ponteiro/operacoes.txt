@@ -1,0 +1,19 @@
+Operações Básicas da Lista Encadeada
+
+Vazia
+Cheia
+ObterQtd
+ObterElemento
+AlterarElemento
+Existe
+Inserir
+  InserirNoInicio
+  InserirNoFinal
+  InserirOrdenado
+  InserirNaPosicao
+Remover
+  RemoverNoInicio
+  RemoverNoFinal
+  RemoverElemento
+  RemoverNaPosicao
+  RemoverTodos
