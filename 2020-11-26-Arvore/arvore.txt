@@ -1,0 +1,41 @@
+Vamos ver Arvores
+
+
+Restrições:
+
+Temos um e somente um no raiz, onde começa a arvore.
+O No Raiz é o único que  nao tem pai.
+Um no nó tem um e somente um pai.
+Um no pode ter n nós filhos
+
+Na árvore nao temos ciclos
+Os nos sem filhos são chamados de nos folhas
+
+O Conjunto de árvores eh chamado de floresta.
+
+
+Em geral usamos a arvore Binário onde cada nó tem no máximo
+2 filhos, o filho da esquerda e o filho da direita.
+
+Em geral usamos arvore Binária ordenada,
+  onde aplica-se a seguinte regra:
+   para todo no sabe-se que 
+      os valores menores estão a esquerda e
+      os valores maiores estão a direita.
+
+Altura -> Distancia do no até o no folha mais distante.
+   H(no) = Max( H(No->esq), H(No->dir) ) + 1;
+
+FBN -> Fator de Balanceamento 
+FBN(No) = H(No->Dir)-H(No->Esq)
+
+formas de percorrer a arvore
+1. Percorrer em profundidade(pilha): 10-8-1-5-3-6-15 (esq->dir)
+2. Percorrer em largura(fila): 10-8-15-1-5-3-6 (esq->dir)
+
+3. Percorrer em pre-ordem : raiz - esq - dir : 10-8-1-5-3-6-15 
+4. Percorrer em ordem     : esq - raiz - dir : 1-3-5-6-8-10-15
+5. Percorrer em pos-ordem : esq - dir - raiz : 3-6-5-1-8-15-10
+
+10 8 1 5 3 6 15 
+10 8 15 1 5 3 6 
